@@ -7,10 +7,8 @@
 
 import SwiftUI
 
-
 struct WeatherListScreen: View {
     
-        
     var body: some View {
         
         List {
