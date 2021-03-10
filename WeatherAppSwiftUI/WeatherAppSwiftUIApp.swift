@@ -12,7 +12,7 @@ struct WeatherAppSwiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            WeatherListScreen()
+            WeatherListScreen().environmentObject(Store())
         }
     }
 }
