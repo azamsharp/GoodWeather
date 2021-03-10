@@ -36,7 +36,7 @@ struct WeatherListScreen: View {
                 case .addNewCity:
                     AddCityScreen().environmentObject(store)
                 case .settings:
-                    SettingsScreen()
+                    SettingsScreen().environmentObject(store)
             }
         })
         

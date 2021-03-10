@@ -35,8 +35,9 @@ extension TemperatureUnit {
 
 struct SettingsScreen: View {
     
+    @EnvironmentObject var store: Store 
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    @State private var selectedUnit: TemperatureUnit = .kelvin
+    @AppStorage("unit") private var selectedUnit: TemperatureUnit = .kelvin
     
     var body: some View {
         VStack {
@@ -52,7 +53,9 @@ struct SettingsScreen: View {
         .padding()
         .navigationTitle("Settings")
         .navigationBarItems(trailing: Button("Done") {
+            
             mode.wrappedValue.dismiss()
+            store.selectedUnit = selectedUnit
             
         })
         .embedInNavigationView()
